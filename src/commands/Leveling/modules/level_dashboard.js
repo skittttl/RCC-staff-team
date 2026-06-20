@@ -296,10 +296,9 @@ async function handleRoleRewardAdd(selectInteraction, rootInteraction, cfg, guil
     cfg.roleRewards[level] = roleId;
     await saveLevelingConfig(client, guildId, cfg);
 
-    await submitted.reply({
-        embeds: [successEmbed('Role Reward Added', `<@&${roleId}> will now be awarded at level **${level}**.`)],
-        flags: MessageFlags.Ephemeral,
-    });
+   await submitted.editReply({
+  embeds: [successEmbed('Role Reward Added', `<@&${roleId}> will now be awarded at level **${level}**.`)]
+});
 
     await refreshDashboard(rootInteraction, cfg, guildId);
 }
