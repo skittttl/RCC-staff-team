@@ -91,7 +91,7 @@ export const botConfig = {
   embeds: {
     colors: {
       // Main brand colors.
-      primary: "#F89B9B",
+      primary: "#9884BE",
       secondary: "#2F3136",
 
       // Standard status colors for success/error/warning/info messages.
