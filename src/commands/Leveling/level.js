@@ -107,7 +107,10 @@ export default {
                 const existingConfig = await getLevelingConfig(client, interaction.guildId);
 
                 if (existingConfig.configured) {
-                    return await replyUserError(interaction, { type: ErrorTypes.UNKNOWN, message: 'The leveling system is already set up on this server (level-up notifications go to <#${existingConfig.levelUpChannel}>).\n\nUse \\`/level dashboard\\` to adjust any settings.' });
+                   return await interaction.reply({
+  content: `The leveling system is already set up on this server (level-up notifications go to <#${existingConfig.levelUpChannel}>).\n\nUse \`/level dashboard\` to adjust any settings.`,
+  ephemeral: true
+});
                 }
 
                 const newConfig = {
