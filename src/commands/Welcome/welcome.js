@@ -84,7 +84,7 @@ export default {
 
             try {
                 await updateWelcomeConfig(client, guild.id, {
-                    enabled: false,
+                    enabled: true,
                     channelId: channel.id,
                     welcomeMessage: message,
                     welcomeImage: image || undefined,
