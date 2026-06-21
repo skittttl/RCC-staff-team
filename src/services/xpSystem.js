@@ -44,12 +44,18 @@ export async function addXp(client, guild, member, xpToAdd) {
         }
       }
 
-      if (didLevelUp) {
-        
-        if (config.announceLevelUp) {
-          await sendLevelUpAnnouncement(guild, member, levelData, config);
-        }
+     if (didLevelUp) {
 
+  const pingLevels = [1, 5, 10, 20, 40, 50, 70, 100];
+
+  if (
+    config.announceLevelUp &&
+    pingLevels.includes(levelData.level)
+  ) {
+    await sendLevelUpAnnouncement(guild, member, levelData, config);
+  }
+
+  try {
         try {
           await logEvent({
             client,
