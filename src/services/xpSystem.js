@@ -55,7 +55,6 @@ export async function addXp(client, guild, member, xpToAdd) {
     await sendLevelUpAnnouncement(guild, member, levelData, config);
   }
 
-  try {
         try {
           await logEvent({
             client,
